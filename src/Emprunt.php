@@ -78,4 +78,10 @@ class Emprunt
         }
     }
 
+    public function setDateRetourEstimee(\DateTime $dateRetourEstimee): void
+    {
+        $this->dateRetourEstimee = $dateRetourEstimee;
+    }
+
+
 }
