@@ -3,7 +3,8 @@ require "./vendor/autoload.php";
 require_once "tests/utils/couleurs.php";
 // Autres
 $adherentBis = new \App\Adherent("Tom", "Dupond");
-
+echo GREEN."###########################################################";
+echo  PHP_EOL;
 echo "• Test :  vérifier que la date d’emprunt, à la création, est égale à la date du jour  \n";
 //Arrange
 $livre = new \App\Livre("la jungle", "21", "AD8878", "Michel", 154);

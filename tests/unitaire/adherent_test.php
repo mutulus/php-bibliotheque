@@ -1,7 +1,8 @@
 <?php
 require "./vendor/autoload.php";
 require_once "tests/utils/couleurs.php";
-
+echo GREEN."###########################################################";
+echo  PHP_EOL;
 echo "• Test : vérifier que la date du jour, si pas précisée est égale à la date du jour  \n";
 //Arrange
 $adherent1=new \App\Adherent("Michel","Francois");
@@ -9,7 +10,7 @@ $adherent1=new \App\Adherent("Michel","Francois");
 $dateAdhesion=$adherent1->getDateAdhesion();
 //Assertion
 if ($dateAdhesion==DateTime::createFromFormat("d/m/Y",date("d/m/Y"))){
-    echo "TEST OK".PHP_EOL.GREEN;
+    echo "TEST OK".PHP_EOL;
 }else{
     echo "TEST PAS OK".PHP_EOL;
 }
