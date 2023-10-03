@@ -12,15 +12,16 @@ Class Adherent{
     +adhesionValable()
 
 }
-Class Media{
+Abstract Class Media{
     #titre : string
+    #dureeEmpruntMax
     +presenter()
 }
 Class BlueRay{
     -realisateur : string
     -duree minutes : int
     -anneeSortie:int
-    -dureeEmpruntMax = 15
+
     +presenter()
 
 }
@@ -29,7 +30,7 @@ Class Livre{
     -isbn : string
     -auteur:string
     -nbPages:int
-    -dureeEmpruntMax = 21
+
     +presenter()
 
 }
@@ -37,7 +38,7 @@ Class Livre{
 Class Magazine{
     -numero : int
     -datePublication : Date
-    -dureeEmpruntMax = 10
+
     +presenter()
 
 }
@@ -49,14 +50,14 @@ Class Emprunt{
     +informationEmprunt()
     +verifierEmprunt()
     +verifierAlerteEmprunt()
-    +verifierDateAutorisee()
+    +verifierDureeAutorisee()
 }
 Media <|-- Livre
 Media <|-- BlueRay
 Media <|-- Magazine
 
-Emprunt --> "1..1" Media : Un media est emprunté
-Adherent --> "0..*" Emprunt : Un adhérent emprunte
+Emprunt  --> "1..1" Media : Un media est emprunté
+Emprunt --> "1..1" Adherent : Un emprunt est réalisé par un adhérent
 
 
 @enduml
